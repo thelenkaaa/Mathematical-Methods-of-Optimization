@@ -68,3 +68,4 @@ constraint = LinearConstraint(
 res = minimize(fun=f_check, x0=x_start, constraints=constraint,
                tol=epsilon, bounds=((0, None), (0, None)))
 print(f"Result: {res.fun:.20f}, X: {[f'{val:.20f}' for val in res.x]}")
+
