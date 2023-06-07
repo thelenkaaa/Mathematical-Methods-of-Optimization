@@ -1,6 +1,5 @@
 import numpy as np
 from copy import deepcopy
-from python_tsp.exact import solve_tsp_dynamic_programming
 
 def get_di(A):
      return [min(A[i]) if min(A[i]) != np.inf else 0 for i in range(len(A))]
@@ -37,7 +36,6 @@ def subtract_dj(A, d_j_list):
      A = transport_matrix(columns)
      return A
 
-
 def reduct_table(A_init):
      A = deepcopy(A_init)
      d_i = get_di(A)
@@ -47,7 +45,6 @@ def reduct_table(A_init):
      H = sum(d_i) + sum(d_j)
 
      return A, H
-
 
 def get_edge(A):
      di = [None] * len(A)
@@ -99,7 +96,6 @@ def update_table_with_edge(A, max_row, max_col):
      A, H = reduct_table(A)
      return A, H
 
-
 def update_table_without_edge(A, max_row, max_col):
      A = deepcopy(A)
      A[max_row][max_col] = np.inf
@@ -125,18 +121,7 @@ def check_result(table):
    print("Optimal cost:", tour[0])
    print("Optimal tour:", tour[1].edges)
 
-
-
-
 def main():
-     #my option
-     # costs = [
-     #    [np.inf, 3, 18, 9, 19],
-     #    [18, np.inf, 20, 9, 2],
-     #    [15, 19, np.inf, 15, 17],
-     #    [18, 19, 7, np.inf, 4],
-     #    [2, 3, 9, 17, np.inf],
-     # ]
 
      costs = [
           [np.inf, 4, 15, 13, 3],

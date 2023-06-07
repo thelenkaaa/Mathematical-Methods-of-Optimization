@@ -71,13 +71,4 @@ def fibonacci(function):
 
     return x
 
-
-
 res = fibonacci(func)
-# print(res)
-
-
-
-
-
-
