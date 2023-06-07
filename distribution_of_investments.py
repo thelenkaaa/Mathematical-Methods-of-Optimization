@@ -1,6 +1,5 @@
 import numpy as np
 
-
 companies = [
     [(2, 0.5), (2, 0.4), (4, 1.4), (4, 1.2), (5, 1.3)],
     [(3, 0.8), (3, 0.6), (4, 1.4), (2, 6), (3, 0.8)],
@@ -53,6 +52,3 @@ for i, state in enumerate(reversed(f_)):
 
     print(f'Project: {project[0]}, company:{i+1}, profit: {project[1]}, cost: {project[2]}')
 print(f'Total profit: {total_profit}')
-
-
-

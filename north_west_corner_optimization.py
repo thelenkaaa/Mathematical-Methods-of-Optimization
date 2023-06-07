@@ -1,10 +1,10 @@
 import pulp
 import numpy as np
 
+
 def equality():
     if sum(stock) != sum(requirements):
         raise ValueError('Sum of needs is not equal to sum of supplies')
-
 
 def check_oporn_plan(X):
     count = 0
@@ -178,7 +178,6 @@ def get_cycle(starting_point, x_indices):
 
     return cycle
 
-
 # Define a helper function to perform depth-first search
 def dfs(is_visited, vertices, current_vertex, cycle_start, came_by_along_row):
     is_cycle = False
@@ -279,21 +278,6 @@ if __name__ == '__main__':
          [7, 5, 15, 3, 6],
          [9, 40, 6, 12, 7],
          [5, 30, 2, 6, 4]]
-
-    # stock = [160, 140, 170]
-    # requirements = [120, 50, 190, 110]
-    # C = [
-    #         [7, 8, 1, 2],
-    #         [4, 5, 9, 8],
-    #         [9, 2, 3, 6],
-    #  ]
-
-    # stock = [100, 150, 200, 100]
-    # requirements = [120, 200, 100, 30, 100]
-    # C = [[7, 5, 6, 9, 5],
-    #      [4, 5, 8, 8, 10],
-    #      [3, 2, 5, 4, 4],
-    #      [9, 11, 10, 8, 11]]
 
     check_stock = stock.copy()
     check_requirements = requirements.copy()

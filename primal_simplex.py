@@ -1,5 +1,3 @@
-import numpy as np
-
 M = 100000
 
 def multiply_columns(col1, col2):
@@ -90,55 +88,6 @@ def is_optimal(m):
             return False
     return True
 
-# функція з 1 лаби
-# A = [[5, -2, 1, 0, 0],
-#      [-1, 2, 0, 1, 0],
-#      [1, 1, 0, 0, -1]]
-# c = [-3, 6, 0, 0, 0]
-# P = [4, 4, 4]
-
-# random
-# A = [[1, -6, 1, 0, 0],
-#      [13, 3, 0, -1, 0],
-#      [3, 7, 0, 1, 1]]
-# P = [1, 6, 30]
-# c = [2, 4, 0, 0, 0]
-
-# функція з 2 лаби
-# A = [[2, 3, 1, 0, 0],
-#    [3, 1, 0, 1, 0],
-#    [-2, 5, 0, 0, 1]]
-# P = [17, 15, 15]
-# c = [-2, -3, 0, 0, 0]
-
-# з 2 штучними базисами
-# A = [[8, -5, 1, 0, 1],
-#      [1, 3, 0, -1, 0],
-#      [2, -7, 3, 0, 1]]
-# P = [16, 2, 9]
-# c = [10, 39, 0, 0, 0]
-
-#мій
-# A = [[3, 1, 1, 0, 0, 0, 0],
-#      [3, 1, 0, -1, 0, 0, 0],
-#      [1, 8, 0, 0, -1, 0, 0],
-#      [1, 0, 0, 0, 0, 1, 0],
-#      [0, 1, 0, 0, 0, 0, 1]]
-# P = [4, 4, 4, 3, 3]
-# c = [-3, -5, 0, 0, 0, 0, 0]
-
-# A = [[0, 0, 1, 1, 0, 0, 0],
-#    [1, 0, 0, -0.34782608, 0.04347826, 0, 0],
-#    [0, 1, 0, 0.04347826, -0.13043478, 0, 0],
-#    [0, 0, 0, 0.34782608, -0.04347826, 1, 0],
-#    [0, 0, 0, -0.04347826, 0.13043478, 0, 1]]
-# P = [0, 1.2173913, 0.34782609, 1.7826087, 2.65217391]
-# c = [-3, -5, 0, 0, 0, 0, 0]
-
-
-
-
-
 def simplex_method(A, P, c):
     while True:
         indexes_for_basis = basis(A, c)
@@ -184,12 +133,8 @@ def simplex_method(A, P, c):
 
     return [p for i, p in sorted(list(zip(indexes_for_basis, P)) + list(zip(indexes_not_in_basis, [0] * len(indexes_not_in_basis))))]
 
-
 # print("res: ", simplex_method(A, P, c))
 # print()
 # print("## scipy.optimize.linprog(method='simplex') ##")
 # from scipy import optimize
 # print(optimize.linprog(c=c, A_eq=A, b_eq=P, method='simplex'))
-
-
-
